@@ -2,7 +2,7 @@
 
 ## 토스증권 Kafka 활용 현황
 
-![Kafka 구조](./img/image.png)
+![Kafka 구조](../img/image.png)
 - Kafka는 메시지를 발생시키는 **Producer**, 메시지를 소비하는 **Consumer**가 있고 요청을 받아 메시지를 저장하거나 꺼내주는 **Broker**로 구성
 - 토스증권 - 주식거래를 위한 한국, 미국 주식시장의 체결가, 호가, 기타 각종 거래소 정보 실시간 제공
 - 마이크로 서비스 아키텍처 구성으로 되어 있어 서비스 간 통신이나 서버의 비동기 처리를 주로 Kafka를 활용
@@ -10,7 +10,7 @@
 - 빅데이터 플랫폼 역할 - 서버와 클라이언트, 네트워크나 보안 장비에서 발생하는 모든 로그 Kafka로 입수
 - 서비스 데이터베이스도 분석에 활용하기 위해 CDC라는 데이터베이스 변경사항 로그를 실시간으로 Kafka로 전송
 
-![kafka 구조2](./img/image-1.png)
+![kafka 구조2](../img/image-1.png)
 
 - 입수되는 메시지들은 Consumer가 용도에 맞는 저장소로 보내줌으로써 빅데이터 분석 및 서비스를 개발
 - Kafka 아키텍처에서는 실시간으로 발생하는 로그를 필요에 맞게 변환하기 위한 스트리밍 프로세싱 플랫폼 필요 → 쿼리만으로 실시간 프로세싱이 가능한 ksqlDB 적극적 활용
@@ -33,7 +33,7 @@
 
 ### IDC 이중화가 되어 있지 않다면?
 
-![IDC 구조](./img/image-2.png)
+![IDC 구조](../img/image-2.png)
 
 - 클라이언트가 한 곳의 IDC와 통신하며 주식 매매중
 - IDC 장애가 해결이 되고 서버를 다시 살릴 때까지 토스 증권 서비스 사용 불가
@@ -51,7 +51,7 @@
 
 #### Kafka는 Stateful한 시스템이라 이중화 구성이 어렵다
 
-![Alt text](./img/image-3.png)
+![Alt text](../img/image-3.png)
 
 - Kafka와 같은 Sateful한 시스템은 이중화 구성과 운영이 어렵다.
     - 저장 중인 메시지 자체가 STATE이기도 하고, 클러스터의 구성원이 누구인지, 리더가 누구인지도 STATE, Replica는 어디에 저장되어야 하는지, 나아가서 Consumer group의 소비 기록인 Offset도 모두 STATE
@@ -59,7 +59,7 @@
 
 ### 토스증권의 Kafka 이중화 방법
 
-![Alt text](./img/image-4.png)
+![Alt text](../img/image-4.png)
 
 - 유저 트래픽이 IDC 두 곳으로 50%씩 들어가고 있음
     - IDC 두 곳을 Active-Active로 운영되고 있기 때문에
@@ -78,7 +78,7 @@
 
 #### Offset Sync
 
-![Alt text](./img/image-5.png)
+![Alt text](../img/image-5.png)
 
 - Kafka에서 Offset은 Consumer Group이 어디까지 메시지를 소비했는지 번호로 나타낸 것
     - 이 번호를 알아야 유실, 중복 없이 메시지 지속 소비 가능
@@ -96,7 +96,7 @@
 
 ## IDC 장애 발생 시 우리의 대응
 
-![Alt text](./img/image-6.png)
+![Alt text](../img/image-6.png)
 
 - 평시에는 IDC1, IDC2로 유저 트래픽이 절반씩 들어가고 있다.
 - 서비스 서버는 각자 본인이 속한 IDC의 Kafka로 메시지 전송

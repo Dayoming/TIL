@@ -56,7 +56,7 @@ Pipeline을 코드로 표현하여 Git에 저장
 
 Pipeline 설정을 yaml 파일로 작성하여 Git에 저장하고 GoCD 서버와 연동
 
-![Alt text](./img/pipeline-image1.png)
+![Alt text](../img/pipeline-image1.png)
 
 - 모든 Pipeline 설정이 파일로 저장되어 있어 어떤 Pipeline이 있는지 Git 저장소에서 한 눈에 확인할 수 있고, 여러 단계로 이루어진 Pipeline 설정도 한 파일에서 모두 확인 가능
 - Pipeline 설정 파일이 Git 저장소에서 Version Control 되기 때문에 언제 어떻게 변경되었는지 확인 가능
@@ -93,7 +93,7 @@ Template Rendering 도구
 - GoCD 템플릿을 대체하고 더 추상적인 부분도 Template로 만들어 사용 가능
 - Helm Template을 Pipeline 설정과 동일한 Git 저장소에 두면 Pipeline 설정과 Template 설정을 한번에 더 쉽게 수정할 수 있다.
 
-![Alt text](./img/pipeline-image2.png)
+![Alt text](../img/pipeline-image2.png)
 
 - 조건문을 이용하면 일부 Pipeline에서만 테스트해볼 수도 있다.
     - 테스트용 Pipeline에서 충분히 동작을 검증하고 전체 Pipeline에 적용하면서 Template 변경 실수가 전체 Pipeline에 영향을 주는 일이 줄어듬
@@ -144,7 +144,7 @@ Pipeline 설정 파일과 검증용 Kubernetes Object 파일에 차이가 생기
 3. **확장성** → Helm Template
 4. **복잡성** → CI
 
-![Alt text](./img/pipeline-image3.png)
+![Alt text](../img/pipeline-image3.png)
 
 이 방법들은 GoCD가 아니더라도 Pipeline as Code를 지원하는 도구라면 적용 가능
 
