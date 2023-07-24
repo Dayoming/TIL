@@ -1,6 +1,10 @@
 # TIL Wiki
 > Today I Learned
 
+## Java
+* [자바 기초 및 문법](https://github.com/Dayoming/TIL/blob/main/Java/%EC%9E%90%EB%B0%94-%EA%B8%B0%EC%B4%88-%EB%B0%8F-%EB%AC%B8%EB%B2%95.md)
+* [참조 타입](https://github.com/Dayoming/TIL/blob/main/Java/%EC%B0%B8%EC%A1%B0-%ED%83%80%EC%9E%85.md)
+
 ## Network
 * [HTTP](https://github.com/Dayoming/TIL/blob/main/Network/HTTP.md)
 
